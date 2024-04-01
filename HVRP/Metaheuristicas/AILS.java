@@ -3,6 +3,8 @@ package Metaheuristicas;
 import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Random;
+import java.io.PrintWriter;
+import java.io.FileNotFoundException;
 
 import AjusteOmega.AODist;
 import AjusteOmega.AjusteOmega;
@@ -146,6 +148,7 @@ public class AILS
 		}
 		
 		tempoFinal=(double)(System.currentTimeMillis()-inicio)/1000;
+
 	}
 	
 	private void perturbacao()
@@ -235,8 +238,17 @@ public class AILS
 		Instancia instancia=new Instancia(leitor.getFile(),leitor.getConfig(),leitor.isRounded(),leitor.getVariant());
 		AILS igas=new AILS(instancia,leitor.getConfig(),leitor.getBest(),leitor.getTimeLimit());
 		igas.procurar();
+
+		// Write the solution to the output file
+		try {
+			PrintWriter writer = new PrintWriter(leitor.getOut());
+			writer.println(igas.melhorSolucao.toString());
+			writer.close();   // Don't forget to close the writer
+		} catch (FileNotFoundException e) {
+			System.err.println("File not found: " + e.getMessage());
+		}
 	}
-	
+
 	public Solucao getMelhorSolucao() {
 		return melhorSolucao;
 	}

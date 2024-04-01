@@ -4,3 +4,4 @@ Resultados/
 /.settings/
 .classpath
 .project
+*.class

@@ -7,6 +7,7 @@ public class LeituraParametros
 {
 	
 	private String file="";
+	private String out="";
 	private boolean rounded=false;
 	private Variante variant=Variante.FSMD;
 	private double limit=Double.MAX_VALUE;
@@ -22,6 +23,7 @@ public class LeituraParametros
 				switch(args[i])
 				{
 					case "-file": file=getEndereco(args[i+1]);break;
+					case "-out": out=getEndereco(args[i+1]);break;
 					case "-rounded": rounded=getRound(args[i+1]);break;
 					case "-variant": variant=getVariant(args[i+1]);break;
 					case "-limit": limit=getLimit(args[i+1]);break;
@@ -54,7 +56,7 @@ public class LeituraParametros
 		try 
 		{
 			File file=new File(texto);
-			if(file.exists()&&!file.isDirectory())
+			if(!file.isDirectory())
 				return texto;
 			else
 				System.err.println("The -file parameter must contain the address of a valid file.");
@@ -204,6 +206,10 @@ public class LeituraParametros
 
 	public String getFile() {
 		return file;
+	}
+
+	public String getOut() {
+		return out;
 	}
 
 	public boolean isRounded() {

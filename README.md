@@ -15,15 +15,12 @@ https://doi.org/10.1016/j.cor.2022.105954 (also available at [aXiv](https://arxi
 
 ## Installation
 
-``` bash
-find . -name "*.java" | xargs javac -d .
-```
-
 ``` consolebash
 echo "Main-Class: Metaheuristicas.AILS" > Manifest.txt
 ```
 
 ``` bash
+find . -name "*.java" | xargs javac -d .
 jar cvfm AILS.jar Manifest.txt *
 ```
 
@@ -34,7 +31,6 @@ jar cvfm AILS.jar Manifest.txt *
 java -jar AILS.jar \ 
 -file Instances/Taillard_20.txt \
 -rounded false \
--best 4760.67 \
 -variant HVRPFD \
 -limit 100 \
 -stoppingCriterion Time
@@ -43,6 +39,8 @@ java -jar AILS.jar \
 Run the AILS class that has the following parameters:
 
 **-file** : Enter the file address of the problem instance.
+
+**-out** : Path of out file to print the best-found solution.
 
 **-rounded** : Indicate whether the instance has rounded distances or not. The options are: [false, true].
 
