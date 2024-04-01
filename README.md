@@ -13,10 +13,31 @@ A hybrid adaptive iterated local search with diversification control to the capa
 An adaptive iterated local search heuristic for the Heterogeneous Fleet Vehicle Routing Problem. Computers & Operations Research, Volume 148, p. 105954.
 https://doi.org/10.1016/j.cor.2022.105954 (also available at [aXiv](https://arxiv.org/abs/2111.12821)).
 
+## Installation
+
+``` bash
+find . -name "*.java" | xargs javac -d .
+```
+
+``` consolebash
+echo "Main-Class: Metaheuristicas.AILS" > Manifest.txt
+```
+
+``` bash
+jar cvfm AILS.jar Manifest.txt *
+```
+
+
 ## To run the algorithm
 
 ```console
-java -jar AILS.jar -file Instances/Taillard_20.txt -rounded false -best 4760.67 -variant HVRPFD -limit 100 -stoppingCriterion Time 
+java -jar AILS.jar \ 
+-file Instances/Taillard_20.txt \
+-rounded false \
+-best 4760.67 \
+-variant HVRPFD \
+-limit 100 \
+-stoppingCriterion Time
 ```
 
 Run the AILS class that has the following parameters:
