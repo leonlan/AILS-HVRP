@@ -15,25 +15,24 @@ https://doi.org/10.1016/j.cor.2022.105954 (also available at [aXiv](https://arxi
 
 ## Installation
 
+First, add a `Manifest.txt` file:
 ``` consolebash
 echo "Main-Class: Metaheuristicas.AILS" > Manifest.txt
 ```
 
+Next compile all files and create `AILS.jar`.
 ``` bash
-find . -name "*.java" | xargs javac -d .
-jar cvfm AILS.jar Manifest.txt *
+find HVRP -name "*.java" | xargs javac -d build
+cd build 
+jar cvfm ../AILS.jar ../Manifest.txt *
+cd ..
 ```
 
 
 ## To run the algorithm
 
 ```console
-java -jar AILS.jar \ 
--file Instances/Taillard_20.txt \
--rounded false \
--variant HVRPFD \
--limit 100 \
--stoppingCriterion Time
+java -jar AILS.jar -file Instances/X101-FSMFD.vrp -out Instances/X101-FSMFD.sol -rounded false -variant HVRPFD -limit 10 -stoppingCriterion Time
 ```
 
 Run the AILS class that has the following parameters:
