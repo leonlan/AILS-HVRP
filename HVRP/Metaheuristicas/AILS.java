@@ -239,13 +239,15 @@ public class AILS
 		AILS igas=new AILS(instancia,leitor.getConfig(),leitor.getBest(),leitor.getTimeLimit());
 		igas.procurar();
 
-		// Write the solution to the output file
-		try {
-			PrintWriter writer = new PrintWriter(leitor.getOut());
-			writer.println(igas.melhorSolucao.toString());
-			writer.close();   // Don't forget to close the writer
-		} catch (FileNotFoundException e) {
-			System.err.println("File not found: " + e.getMessage());
+		if (!leitor.getOut().isEmpty()) {
+			// Write the solution to the output file
+			try {
+				PrintWriter writer = new PrintWriter(leitor.getOut());
+				writer.println(igas.melhorSolucao.toString());
+				writer.close();   // Don't forget to close the writer
+			} catch (FileNotFoundException e) {
+				System.err.println("File not found: " + e.getMessage());
+			}
 		}
 	}
 
