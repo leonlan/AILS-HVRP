@@ -190,7 +190,11 @@ public class Rota implements Comparable<Rota>
 	
 	public String toString2() 
 	{
-		String str="Type: "+veiculo.getType()+" Route #"+(nomeRota+1)+": ";
+		// In the original code, the vehicle types are bugged. The vehicle type
+		// number is not const and changes throughout the search. It seems that
+		// the other data (q, r, f) are not bugged. So we print the full vehicle
+		// type data to identify which vehicle type is being used.
+		String str=veiculo.toString()+" Route #"+(nomeRota+1)+": ";
 		No aux=inicio.prox;
 		do
 		{
