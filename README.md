@@ -32,7 +32,7 @@ cd ..
 ## To run the algorithm
 
 ```console
-java -jar AILS.jar -file Instances/X101-FSMFD.vrp -out Instances/X101-FSMFD.sol -rounded false -variant HVRPFD -limit 10 -stoppingCriterion Time
+java -jar AILS.jar -file Instances/X101-FSMFD.vrp -out Solutions/X101-FSMFD.sol -rounded false -variant HVRPFD -limit 10 -stoppingCriterion Time
 ```
 
 Run the AILS class that has the following parameters:
