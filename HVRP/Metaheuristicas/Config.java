@@ -76,7 +76,7 @@ public class Config implements Cloneable
 		+"\nDBeta: "+dBeta
 		+"\nVarphi: "+varphi
 		+"\nalpha: "+deci.format(alpha)
-		+"\nstoppingCriterion: "+stoppingCriterion.tipo
+		+"\nStopping criterion: "+stoppingCriterion.tipo
 		+"\n";
 	}
 

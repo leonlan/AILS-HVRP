@@ -44,9 +44,8 @@ public class LeituraParametros
 		System.out.println("File: "+file);
 		System.out.println("Rounded: "+rounded);
 		System.out.println("Variant: "+variant);
-		System.out.println("limit: "+limit);
+		System.out.println("Time limit: "+limit);
 		System.out.println("Best: "+best);
-		System.out.println("LimitTime: "+limit);
 		System.out.println(config);
 	}
 	

@@ -202,11 +202,12 @@ public class AILS
 			melhorSolucao.clone(solucao2);
 
 			if(print)
-				System.out.println("melhorF: "+melhorF+" K: "+solucao2.NumRotas
-				+" tempoMF: "+tempoMF+" gap: "+deci.format(getGap())
-				+" metodo: "+metodo
-				+" iteradorMF: "+iteradorMF
-				+" HeuAdd: "+perturbacaoEscolhida.heuristicaAdicaoEscolhida
+				System.out.println("Incumbent: "+melhorF
+				+" | # routes: "+solucao2.NumRotas
+				+" | Time (s): "+String.format("%.2f", tempoMF)
+				+" | # iters: "+iteradorMF
+				+" | Method: "+metodo
+				+" | HeuAdd: "+perturbacaoEscolhida.heuristicaAdicaoEscolhida
 				);
 		}
 	}
